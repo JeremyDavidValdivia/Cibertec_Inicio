@@ -7,6 +7,8 @@ namespace WebDeveloper.DataAccess
 {
     public class ClientData : BaseDataAccesscs<Client>
     {
-
+        //public GetClientById(int id)
+        //{
+        //}
     }
 }
