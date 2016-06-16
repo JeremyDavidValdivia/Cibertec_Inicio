@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using WebDeveloper.DataAccess;
 using WebDeveloper.Model;
+using System.Linq;
 
 namespace WebDeveloper.Controllers
 {
@@ -31,5 +32,35 @@ namespace WebDeveloper.Controllers
             }
             return View();
         }
+
+        public ActionResult Edit(int Id)
+        {
+            return View(_client.GetList().Where(c => c.ID == Id).FirstOrDefault());
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Client client)
+        {
+            /* Validación del lado del servidor - las llamadas a Requered */
+            if (ModelState.IsValid)
+            {
+                _client.Update(client);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            return View(_client.GetList().Where(c => c.ID == Id).FirstOrDefault());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Client client)
+        {
+            _client.Delete(client);
+            return RedirectToAction("Index");
+        }
+
     }
 }
