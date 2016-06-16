@@ -7,8 +7,9 @@ namespace WebDeveloper.DataAccess
 {
     public class ClientData : BaseDataAccesscs<Client>
     {
-        //public GetClientById(int id)
-        //{
-        //}
+        public Client GetClientById(int id)
+        {
+            return this.GetList().Where(c => c.ID == id).FirstOrDefault();
+        }
     }
 }
