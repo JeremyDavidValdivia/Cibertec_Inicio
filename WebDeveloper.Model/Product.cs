@@ -19,11 +19,11 @@ namespace WebDeveloper.Model
         [Display(Name = "Description : ")]
         [Required(ErrorMessage = "Description is required")]
         [StringLength(200)]
-        public double Desc { get; set; }
+        public string Desc { get; set; }
 
         [Display(Name = "Date : ")]
         [Required(ErrorMessage = "Date is required")]
-        public DateTime Date { get; set; }
+        public DateTime dDate { get; set; }
 
         [Display(Name = "Price : ")]
         [Required(ErrorMessage = "Price is required")]
