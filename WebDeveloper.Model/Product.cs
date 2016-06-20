@@ -21,10 +21,19 @@ namespace WebDeveloper.Model
         [StringLength(200)]
         public string Desc { get; set; }
 
+        private DateTime _dDate = DateTime.MinValue;
         [Display(Name = "Date : ")]
         [Required(ErrorMessage = "Date is required")]
-        public DateTime dDate { get; set; }
-
+        [DataType(DataType.Date)]
+        public DateTime dDate
+        {
+            get
+            {
+                return (_dDate == DateTime.MinValue) ? DateTime.Now : _dDate;
+            }
+            set { _dDate = value; }
+        }
+        
         [Display(Name = "Price : ")]
         [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
