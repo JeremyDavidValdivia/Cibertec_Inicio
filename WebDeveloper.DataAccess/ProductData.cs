@@ -16,5 +16,14 @@ namespace WebDeveloper.DataAccess
                 return dbcontext.Products.FirstOrDefault(c => c.ID == id);
             }
         }
+
+        public List<Product> GetFakeProducts()
+        {
+            return new List<Product>
+            {
+                new Product { ID = 1, Desc = "Cristal", Price = 3.5, CreateDate=null },
+                new Product { ID = 2, Desc = "Pilse", Price = 0.0, CreateDate=DateTime.Parse("2016-06-22 12:51:00") }
+            };
+        }
     }
 }

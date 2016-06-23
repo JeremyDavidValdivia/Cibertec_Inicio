@@ -21,6 +21,8 @@ namespace WebDeveloper.Model
         [StringLength(200)]
         public string Desc { get; set; }
 
+        public DateTime? CreateDate { get; set; }
+
         private DateTime _dDate = DateTime.MinValue;
         [Display(Name = "Date : ")]
         [Required(ErrorMessage = "Date is required")]

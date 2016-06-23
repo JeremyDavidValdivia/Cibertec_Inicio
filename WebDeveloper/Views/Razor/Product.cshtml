@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebDeveloper.Model.Product>
+@using WebDeveloper.Helpers
+
+@{
+    ViewBag.Title = "Product";
+}
+
+@helper DisplayPriceRazor(double price)
+{
+    if (price == 0.0)
+    {
+        <span>Price : Free!!!</span>
+    }
+    else
+    {
+        <span>Price : @price</span>
+    }
+}
+
+@helper DisplayDateOrNullRazor(DateTime? CreateDate)
+{
+    @*if (CreateDate == null)
+    {
+            <span>Date Razor : </span>
+    }
+    else
+    {
+            <span>Date Razor : @CreateDate.Value.ToString("dd/MM/yyyy")</span>
+    }*@
+
+   <span>@((CreateDate == null) ? "none" : CreateDate.Value.ToString("dd/MM/yyyy"))</span>
+}
+
+<h2>Product</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <span>@item.Code</span>
+            <span>Description : @item.Desc</span>
+            @DisplayPriceRazor(item.Price)
+            <div>
+                @CustomHelper.DisplayPriceStatic(item.Price)
+            </div>
+            <div>
+                @Html.DisplayPriceExtension(item.Price)
+            </div>
+            <span>Razor : </span>
+            @DisplayDateOrNullRazor(item.CreateDate)
+            <span>Static : </span>
+            @CustomHelper.DisplayDateOrNullStatic(item.CreateDate)
+            <span>Extension : </span>
+            @Html.DisplayDateOrNullStaticExtension(item.CreateDate)
+        </li>
+    }
+</ul>
+
