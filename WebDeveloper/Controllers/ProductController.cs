@@ -8,14 +8,26 @@ using WebDeveloper.Model;
 
 namespace WebDeveloper.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
-        private ProductData _product = new ProductData();
+        //private ProductData _product = new ProductData();
+
+        private ProductData _product;
+
+        public ProductController(ProductData product)
+        {
+            _product = product;
+        }
 
         // GET: Client
         public ActionResult Index()
         {
-            var product = new ProductData();
+            //var product = new ProductData();
+            ViewBag.Title = Resources.Resource.Product_Title;
+            ViewBag.Edit = Resources.Resource.Edit;
+            ViewBag.Create_New = Resources.Resource.Create_New;
+            ViewBag.Delete = Resources.Resource.Delete;
             return View(_product.GetList());
         }
 

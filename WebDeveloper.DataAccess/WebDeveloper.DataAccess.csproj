@@ -52,13 +52,9 @@
     <Compile Include="BaseDataAccesscs.cs" />
     <Compile Include="ClientData.cs" />
     <Compile Include="IDataAccess.cs" />
-    <Compile Include="Migrations\201606210042469_InitialCreate.cs" />
-    <Compile Include="Migrations\201606210042469_InitialCreate.Designer.cs">
-      <DependentUpon>201606210042469_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606210102074_First Change of dbo.Client.cs" />
-    <Compile Include="Migrations\201606210102074_First Change of dbo.Client.Designer.cs">
-      <DependentUpon>201606210102074_First Change of dbo.Client.cs</DependentUpon>
+    <Compile Include="Migrations\201607050134265_SCRIPT01.cs" />
+    <Compile Include="Migrations\201607050134265_SCRIPT01.Designer.cs">
+      <DependentUpon>201607050134265_SCRIPT01.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductData.cs" />
@@ -77,11 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606210042469_InitialCreate.resx">
-      <DependentUpon>201606210042469_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606210102074_First Change of dbo.Client.resx">
-      <DependentUpon>201606210102074_First Change of dbo.Client.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607050134265_SCRIPT01.resx">
+      <DependentUpon>201607050134265_SCRIPT01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,17 +2,29 @@
 using WebDeveloper.DataAccess;
 using WebDeveloper.Model;
 using System.Linq;
+using WebDeveloper.Resources;
 
 namespace WebDeveloper.Controllers
 {
+    [Authorize]
     public class ClientController : Controller
     {
-        private ClientData _client = new ClientData();
+        //private ClientData _client = new ClientData();
+
+        //private IDataAccess<Client> _client;
+
+        private ClientData _client;
+
+        public ClientController(ClientData client)
+        {
+            _client = client;
+        }
 
         // GET: Client
         public ActionResult Index()
         {
-            var client = new ClientData();
+            ViewBag.Title = Resources.Resource.Client_Title;
+            //var client = new ClientData();
             return View(_client.GetList());
         }
 
